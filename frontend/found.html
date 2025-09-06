@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Found Items</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/custom.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="index.html" class="font-bold text-xl">Lost & Found</a>
+      <div class="space-x-4">
+        <a href="lost.html" class="hover:underline">Lost</a>
+        <a href="found.html" class="hover:underline">Found</a>
+        <a href="report.html" class="hover:underline">Report</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="text-center py-8">
+    <h1 class="text-3xl font-bold text-gray-800">Found Items</h1>
+    <p class="text-gray-600">Browse all reported found items below</p>
+  </header>
+
+  <!-- Search -->
+  <div class="container mx-auto mb-6 px-4">
+    <input 
+      type="text" 
+      id="searchFound" 
+      placeholder="Search found items..." 
+      class="w-full md:w-1/2 p-3 border rounded-lg shadow-sm"
+    >
+  </div>
+
+  <!-- Items Grid -->
+  <div class="container mx-auto px-4">
+    <div id="foundItemsContainer" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+
+  <script src="scripts/items.js"></script>
+</body>
+</html>
