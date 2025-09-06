@@ -6,6 +6,17 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 5000; // Render will use env PORT
 
+const path = require("path");
+
+// Serve static frontend
+app.use(express.static(path.join(__dirname, "../frontend"))); // adjust path if needed
+
+// Fallback for SPA
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
+
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
