@@ -14,7 +14,7 @@ function generateCard(item) {
 
 async function fetchItems(type, containerId, searchInputId) {
   try {
-    const res = await fetch("http://localhost:5000/api/items");
+    const res = await fetch("https://lost-found-portal-8hrq.onrender.com/api/items/found");
     const items = await res.json();
 
     const filteredItems = items.filter(item => item.type === type);
@@ -68,7 +68,7 @@ async function handleAddItem(e) {
   };
 
   try {
-    const res = await fetch("http://localhost:5000/api/items", {
+    const res = await fetch("https://lost-found-portal-8hrq.onrender.com/api/items/found", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(itemData),

@@ -1,3 +1,19 @@
+const BASE_URL = window.location.hostname.includes("localhost")
+  ? "http://localhost:5000"
+  : "https://lost-found-portal-8hrq.onrender.com/"; // replace with your Render URL
+
+fetch(`${BASE_URL}/api/items/found`)
+
+// Example: fetch found items
+async function getFoundItems() {
+  const res = await fetch(`${BASE_URL}/api/items/found`);
+  const data = await res.json();
+  console.log(data);
+}
+
+getFoundItems();
+
+
 // Navbar + Footer Injection
 function loadNavbar() {
   document.getElementById("navbar").innerHTML = `
